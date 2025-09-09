@@ -1,5 +1,6 @@
 package com.example.navigationexample
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,13 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding) {
+            btnComplete.setOnClickListener {
+                var resultIntent = Intent()
+                resultIntent.putExtra("fatih", "fatih")
+                setResult(RESULT_OK, resultIntent)
+
+                finish()
+            }
         }
     }
 }
